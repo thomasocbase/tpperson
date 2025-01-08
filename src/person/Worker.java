@@ -3,9 +3,13 @@ package person;
 public class Worker extends Adult {
     private String job;
 
-    public Worker(String name, String surname, int age, boolean hasLicense, String job) {
-        super(name, surname, age, hasLicense);
+    public Worker(String firstname, String lastname, int age, boolean hasLicense, String job) {
+        super(firstname, lastname, age, hasLicense);
         this.job = job;
+    }
+
+    public Worker() {
+        super();
     }
 
     @Override

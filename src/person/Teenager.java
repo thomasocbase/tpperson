@@ -3,9 +3,13 @@ package person;
 public class Teenager extends Minor {
     private boolean ownsScooter;
 
-    public Teenager(String name, String surname, int age, String schoolName, boolean ownsScooter) {
-        super(name, surname, age, schoolName);
+    public Teenager(String firstname, String lastname, int age, String schoolName, boolean ownsScooter) {
+        super(firstname, lastname, age, schoolName);
         this.ownsScooter = ownsScooter;
+    }
+
+    public Teenager() {
+
     }
 
     @Override
@@ -15,7 +19,7 @@ public class Teenager extends Minor {
 
     public String toString() {
         return super.toString() + " (teenager)"
-                + (ownsScooter ? ", and I own a scooter" : ", and I don't own a scooter");
+                + (ownsScooter ? ", and owns a scooter." : ", and doesn't own a scooter.");
     }
 
     public boolean getOwnsScooter() {

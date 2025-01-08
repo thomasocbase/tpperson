@@ -55,6 +55,6 @@ public class PersonView
 
     public void displayPerson(String person)
     {
-        DisplayData.displayMessage(person);
+        DisplayData.displayMessage("Result of your request: " + person);
     }
 }

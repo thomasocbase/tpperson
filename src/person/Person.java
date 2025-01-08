@@ -1,30 +1,46 @@
 package person;
 
 public abstract class Person implements IPerson {
-    private String name;
-    private String surname;
+    private String firstname;
+    private String lastname;
     private int age;
 
-    public Person(String name, String surname, int age) {
-        this.name = name;
-        this.surname = surname;
+    public Person(String firstname, String lastname, int age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.age = age;
     }
 
-    public String getName() {
-        return name;
+    public Person() {
+
     }
 
-    public String getSurname() {
-        return surname;
+    public String getFirstName() {
+        return firstname;
+    }
+
+    public void setFirstName(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastName() {
+        return lastname;
+    }
+
+    public void setLastName(String lastname) {
+        this.lastname = lastname;
     }
 
     public int getAge() {
         return age;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public String toString() {
-        return name + " " + surname + " (" + age + ")";
+        return firstname + " " + lastname + " (" + age + " years old)";
     }
 
     public abstract String move();
