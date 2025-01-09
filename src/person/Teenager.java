@@ -14,7 +14,7 @@ public class Teenager extends Minor {
 
     @Override
     public String move() {
-        return "I'm going fast!";
+        return "He's going fast!";
     }
 
     public String toString() {

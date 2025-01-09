@@ -14,11 +14,11 @@ public class Retiree extends Adult {
 
     @Override
     public String move() {
-        return "I move very slowly.";
+        return "He moves very slowly.";
     }
 
     public String toString() {
-        return super.toString() + " is retired. His hobby is " + hobby;
+        return super.toString() + " He is retired. His hobby is " + hobby + ".";
     }
 
     public String getHobby() {

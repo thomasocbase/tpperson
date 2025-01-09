@@ -14,11 +14,11 @@ public class Worker extends Adult {
 
     @Override
     public String move() {
-        return "I move quite fast but with caution.";
+        return "He moves quite fast but with caution.";
     }
 
     public String toString() {
-        return super.toString() + " I'm a worker, as a " + job;
+        return super.toString() + " He's a worker, as a " + job + ".";
     }
 
     public String getJob() {

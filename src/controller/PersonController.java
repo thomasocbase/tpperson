@@ -4,58 +4,39 @@ import helpers.DisplayData;
 import model.PersonModel;
 import person.Minor;
 import person.Person;
+import service.PersonService;
 import view.PersonView;
 
 public class PersonController {
     PersonView personView;
     PersonModel personModel;
+    PersonService personService;
 
     public PersonController() {
         personView = new PersonView();
         personModel = new PersonModel();
+        personService = new PersonService();
     }
 
     public void run() {
-        // Ask for the person's age
+        // Ask person's age
         int inputAge = personView.chooseAge();
 
+        // Ask common information
         String inputFirstName = personView.chooseFirstName();
         String inputLastName = personView.chooseLastName();
 
+        // Create person object
         Person person = personModel.setupPersonObject(inputAge);
         person.setFirstName(inputFirstName);
         person.setLastName(inputLastName);
         person.setAge(inputAge);
 
-        if (person instanceof person.Minor) {
-            String school = personView.chooseSchool();
-            ((Minor) person).setSchoolName(school);
-        } else if (person instanceof person.Worker) {
-            boolean hasLicense = personView.chooseLicense();
-            ((person.Worker) person).setHasLicense(hasLicense);
-        }
+        // Ask specific information
+        personService.collectSpecificInformation(person);
 
-        if (person instanceof person.Child) {
-            boolean hasBike = personView.chooseBike();
-            ((person.Child) person).setOwnsBike(hasBike);
-        }
-
-        if (person instanceof person.Teenager) {
-            boolean hasScooter = personView.chooseScooter();
-            ((person.Teenager) person).setOwnsScooter(hasScooter);
-        }
-
-        if (person instanceof person.Worker) {
-            boolean hasLicense = personView.chooseLicense();
-            ((person.Worker) person).setHasLicense(hasLicense);
-        }
-
-        if (person instanceof person.Retiree) {
-            String hobby = personView.chooseHobby();
-            ((person.Retiree) person).setHobby(hobby);
-        }
-
+        // Display person information
         personView.displayPerson(person.toString());
-
+        personView.displayPerson(person.move());
     }
 }

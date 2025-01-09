@@ -14,7 +14,7 @@ public class Child extends Minor {
 
     @Override
     public String move() {
-        return "I'm going slowly!";
+        return "He's going slowly!";
     }
 
     public String toString() {
@@ -25,8 +25,6 @@ public class Child extends Minor {
     public boolean getOwnsBike() {
         return ownsBike;
     }
-
-
 
     public void setOwnsBike(boolean ownsBike) {
         this.ownsBike = ownsBike;

@@ -47,6 +47,12 @@ public class PersonView
         return InputData.inputBoolean();
     }
 
+    public String chooseJob()
+    {
+        DisplayData.displayMessage("What is the job of the person?");
+        return InputData.inputString();
+    }
+
     public String chooseHobby()
     {
         DisplayData.displayMessage("Enter the hobby of the person:");
