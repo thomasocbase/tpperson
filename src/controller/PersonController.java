@@ -8,14 +8,14 @@ import service.PersonService;
 import view.PersonView;
 
 public class PersonController {
-    PersonView personView;
-    PersonModel personModel;
-    PersonService personService;
+    private PersonView personView;
+    private PersonModel personModel;
+    private PersonService personService;
 
     public PersonController() {
-        personView = new PersonView();
-        personModel = new PersonModel();
-        personService = new PersonService();
+        this.personView = new PersonView();
+        this.personModel = new PersonModel();
+        this.personService = new PersonService();
     }
 
     public void run() {
